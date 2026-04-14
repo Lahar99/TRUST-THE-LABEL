@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up</title>
+        <link rel="stylesheet" type="text/css" href="LoginOrSignUp.css">
+    </head>
+    <body>
+        <div class="login-container">
+            <a href="Home.html" id="Back"><img src="back-icon.png" alt="Back To Home"></a>
+            <h1>Sign Up</h1>
+            <form action="/signup" method="post">
+                <label for="new-username">Username:</label>
+                <input type="text" id="new-username" name="new-username" required>
+
+                <label for="new-password">Password:</label>
+                <input type="password" id="new-password" name="new-password" required>
+
+                <input type="submit" value="Sign Up">
+            </form>
+            <a href="Login.html">Already have an account? Login</a>
+        </div>
+    </body>
+</html>
