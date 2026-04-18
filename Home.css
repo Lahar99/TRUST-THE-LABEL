@@ -1,9 +1,22 @@
+:root{
+    --bg-1: #f7fff7;
+    --bg-2: #e7f8e8;
+    --accent-1: #4f9f66;
+    --accent-2: #2d7f51;
+    --muted: #3f5a41;
+    --surface: #ffffff;
+    --glass: rgba(255,255,255,0.86);
+    --card-shadow: 0 12px 36px rgba(30,60,30,0.08);
+}
+
 body {
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: radial-gradient(circle at top left, #f7fff7 0%, #e7f8e8 40%, #d3efce 80%, #f2fff4 100%);
+    font-family: 'Segoe UI', 'Inter', system-ui, Arial, sans-serif;
+    background: radial-gradient(circle at top left, var(--bg-1) 0%, var(--bg-2) 40%, #d3efce 80%, #f2fff4 100%);
     color: #13472f;
     min-height: 100vh;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
 }
 
 /* Logo */
@@ -15,41 +28,48 @@ body {
 }
 
 .page-container {
-    max-width: 1300px;
-    margin: 0 auto;
+    max-width: 1200px;
+    margin: 24px auto;
     background-color: transparent;
-    padding: 35px 20px 60px;
+    padding: 20px;
 }
 
 /* Navbar */
+#TopNav {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding: 12px 6px;
+}
+
 #LeftNavBar {
-    margin-top: -7px;
-    margin-left: 140px;
     display: flex;
     gap: 18px;
+    align-items:center;
 }
 
 #RightNavBar {
-    position: absolute;
-    top: 25px;
-    right: 40px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
+
+.nav-link{ color: var(--accent-2); text-decoration:none; padding:8px 10px; border-radius:10px; transition:background .16s ease }
+.nav-link:hover{ background: rgba(255,255,255,0.6) }
 
 /* General Buttons */
 button {
     padding: 10px 16px;
-    border: 1px solid rgba(94, 161, 113, 0.28);
-    background-color: rgba(255, 255, 255, 0.96);
-    color: #1d5131;
+    border: 1px solid rgba(94, 161, 113, 0.18);
+    background-color: var(--glass);
+    color: var(--accent-2);
     cursor: pointer;
-    border-radius: 14px;
+    border-radius: 12px;
     font-weight: 600;
-    transition: all 0.25s ease;
+    transition: all 0.18s ease;
     font-size: 15px;
-    box-shadow: 0 10px 25px rgba(88, 143, 102, 0.12);
+    box-shadow: var(--card-shadow);
 }
 
 button:hover {
@@ -64,13 +84,13 @@ button:hover {
 
 /* Get Started Button */
 .LoginSignUp {
-    padding: 12px 28px;
-    background-color: #5dab73;
+    padding: 10px 20px;
+    background-color: var(--accent-1);
     color: #ffffff;
-    border-radius: 30px;
-    font-weight: bold;
+    border-radius: 20px;
+    font-weight: 700;
     border: none;
-    box-shadow: 0 12px 30px rgba(83, 139, 96, 0.22);
+    box-shadow: 0 10px 28px rgba(55,100,60,0.14);
 }
 
 .LoginSignUp:hover {
@@ -130,12 +150,15 @@ button:hover {
 
 #MainBody {
     position: relative;
-    background: linear-gradient(180deg, #4f9f66 0%, #94d9a2 100%);
-    padding: 60px;
-    border-radius: 18px;
-    color: #112a19;
-    box-shadow: 0 30px 80px rgba(92, 142, 108, 0.18);
+    background: linear-gradient(180deg, var(--accent-1) 0%, #94d9a2 100%);
+    padding: 48px 40px;
+    border-radius: 16px;
+    color: #fff;
+    box-shadow: 0 24px 70px rgba(40,80,40,0.10);
     overflow: hidden;
+    display:flex;
+    gap:30px;
+    align-items:center;
 }
 
 #MainBody h4 {
@@ -184,18 +207,21 @@ button:hover {
 }
 
 .features {
-    background-color: #effcf0;
-    padding: 40px 0 50px;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    border-radius: 0 0 18px 18px;
-    box-shadow: 0 15px 40px rgba(10, 45, 18, 0.1);
+    background-color: #f6fff6;
+    padding: 28px 18px 36px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(10, 45, 18, 0.06);
 }
 
 .feature-box {
     text-align: center;
-    max-width: 220px;
+    padding: 12px;
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(20,60,30,0.04);
 }
 
 .feature-box img {
@@ -215,12 +241,12 @@ button:hover {
 }
 
 #FactsSection {
-    background: linear-gradient(180deg, #e3f5e3 0%, #d7f0d7 100%);
-    padding: 60px;
-    margin-top: 30px;
-    border-radius: 18px;
-    color: #1c5138;
-    box-shadow: 0 25px 60px rgba(80, 133, 89, 0.12);
+    background: linear-gradient(180deg, #eaf8ea 0%, #e0f2df 100%);
+    padding: 40px 28px;
+    margin-top: 22px;
+    border-radius: 12px;
+    color: var(--accent-2);
+    box-shadow: 0 18px 46px rgba(70, 120, 70, 0.06);
 }
 
 #FactsSection h1 {
@@ -365,21 +391,25 @@ button:hover {
     --low-risk: #2ecc71;
 }
 
+
 .product-card {
     border-radius: 12px;
-    box-shadow: 0 6px 22px rgba(10,10,10,0.08);
+    box-shadow: var(--card-shadow);
     margin: 18px 0;
     padding: 18px;
     display: grid;
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 200px 1fr;
     gap: 18px;
-    background: #ffffff;
+    background: var(--surface);
     align-items: start;
+    transition: transform .18s ease, box-shadow .18s ease;
 }
 
-.product-card:hover { transform: translateY(-6px); }
+.product-card:hover { transform: translateY(-8px); box-shadow: 0 22px 60px rgba(20,60,30,0.12) }
 
-.product-image { width:100%; height:auto; max-height:320px; object-fit:contain; border-radius:8px; display:block }
+.product-image { width:100%; height:220px; object-fit:cover; border-radius:8px; display:block }
+
+.product-image-wrap{ background: linear-gradient(180deg, #f8fff8, #ffffff); padding:6px; border-radius:10px; display:flex; align-items:center; justify-content:center }
 
 .risk-badge { display:inline-block; padding:6px 10px; border-radius:18px; color:#fff; font-weight:700; font-size:0.78rem; text-transform:uppercase; }
 .risk-High { background: var(--high-risk); }
